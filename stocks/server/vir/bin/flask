@@ -1,4 +1,4 @@
-#!/home/aryav/MiscProjects/Stock-Market-API/server/vir/bin/python3
+#!/home/aryav/MiscProjects/Stock-Market-API/stocks/server/vir/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
