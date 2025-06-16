@@ -9,9 +9,9 @@ def test():
     return jsonify(
         {
             "users": [
-                'arpan',
-                'zach',
-                'jessie'
+                'aryav',
+                'yadav',
+                'narayan'
             ]
         }
     )
