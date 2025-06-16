@@ -1,8 +1,22 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+from alpha_vantage.timeseries import TimeSeries
 
 app = Flask(__name__)
 cors = CORS(app, origins='*')
+
+API_KEY = "TOQN4RN3SDA1GSDF"
+
+@app.route('/api/stock/<ticker>')
+def get_stock_data(ticker):
+    ts = TimeSeries(key=API_KEY, output_format='pandas')
+    data, _ = ts.get_daily(symbol=ticker, outputsize='compact')
+
+    print(data.head())
+
+    closes = data['4. close'].tail(30)
+    closes_dict = {str(k): v for k, v in closes.to_dict().items()}
+    return jsonify(closes_dict)
 
 @app.route("/api/test", methods=['GET'])
 def test():
