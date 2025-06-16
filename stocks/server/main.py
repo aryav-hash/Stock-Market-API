@@ -30,5 +30,11 @@ def test():
         }
     )
 
+@app.route('/api/info/<ticker>')
+def get_stock_info(ticker):
+    ts = TimeSeries(key=API_KEY)
+    quote, _ = ts.get_quote_endpoint(symbol=ticker)
+    return jsonify(quote)
+
 if __name__ == "__main__":
     app.run(debug=True)
