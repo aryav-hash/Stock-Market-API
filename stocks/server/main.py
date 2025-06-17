@@ -5,7 +5,7 @@ from alpha_vantage.timeseries import TimeSeries
 app = Flask(__name__)
 cors = CORS(app, origins='*')
 
-API_KEY = "TOQN4RN3SDA1GSDF"
+API_KEY = "d183bg1r01ql1b4lhm10d183bg1r01ql1b4lhm1g"
 
 @app.route('/api/stock/<ticker>')
 def get_stock_data(ticker):
